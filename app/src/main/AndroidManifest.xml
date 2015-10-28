@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.niels.geofencing" >
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon, android:theme">
+    <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".GeofenceTransitionsIntentService"/>
+
+    </application>
+
+    <provider
+        android:name="com.aware.providers.Scheduler_Provider"
+        android:authorities="${applicationId}.provider.scheduler"
+        android:exported="true"
+        android:readPermission="com.aware.READ_CONTEXT_DATA"
+        android:writePermission="com.aware.WRITE_CONTEXT_DATA"
+        >
+    </provider>
+
+    <provider
+        android:name="com.aware.providers.ESM_Provider"
+        android:authorities="${applicationId}.provider.esm"
+        android:exported="true"
+        android:readPermission="com.aware.READ_CONTEXT_DATA"
+        android:writePermission="com.aware.WRITE_CONTEXT_DATA"
+        >
+    </provider>
+</manifest>

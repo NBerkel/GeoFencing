@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/add_geofences_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:onClick="addGeofencesButtonHandler"
+        android:text="@string/add_geofences"
+        android:enabled="false" />
+
+    <Button
+        android:id="@+id/remove_geofences_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:onClick="removeGeofencesButtonHandler"
+        android:text="@string/remove_geofences"
+        android:enabled="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/mLatitudeText"
+        android:layout_below="@+id/add_geofences_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/mLongitudeText"
+        android:layout_below="@+id/add_geofences_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="78dp" />
+</RelativeLayout>
